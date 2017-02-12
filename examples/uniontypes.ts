@@ -9,10 +9,9 @@ declare namespace X1 {
     type File = { /* */ }
 
     interface IMedia {
-        type: 'image' | 'webpage' | 'file'
+        type: 'webpage' | 'file'
         webpage?: Webpage
         file?: File
-        preview?: string;
     }
 }
 
