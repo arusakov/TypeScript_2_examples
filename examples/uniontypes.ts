@@ -4,25 +4,33 @@
 
 // useful for API
 
-type Webpage = any
+declare namespace X1 {
+    type Webpage = { /* */ }
+    type File = { /* */ }
 
-interface Data {
-    type: 'file' | 'webpage'
-    webpage?: Webpage
-    file?: File
+    interface IMedia {
+        type: 'image' | 'webpage' | 'file'
+        webpage?: Webpage
+        file?: File
+        preview?: string;
+    }
 }
+
 
 //
 // part 2
 //
 
 namespace X {
+    type Webpage = { /* */ }
+    type File = { /* */ }
+
     type MediaFile = { type: 'file', file: File }
     type MediaWebpage = { type: 'webpage', webpage: Webpage }
 
-    type Media = MediaFile | MediaWebpage
+    type MediaType = MediaFile | MediaWebpage
 
-    declare const m: Media
+    declare const m: MediaType
     if (m.type == 'file') {
         m.webpage   // ERROR
         m.file      // OK
