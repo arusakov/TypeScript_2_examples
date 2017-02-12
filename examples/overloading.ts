@@ -12,6 +12,7 @@ interface Overloads {
         type: 'keydown',
         listener: (this: this, ev: KeyboardEvent) => any,
         useCapture?: boolean): void
+    // ...
     addEventListener(
         type: string,
         listener: EventListenerOrEventListenerObject,
