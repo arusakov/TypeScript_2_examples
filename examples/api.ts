@@ -30,6 +30,10 @@ function call(url: string, data?: any) {
     return fetch(/* ... */)
 }
 
+//
+// part 3
+//
+
 call('/abb', { name: 'x' }) // ERROR
 call('/add', { name: 'x' }).then(res => {
     res     // number
