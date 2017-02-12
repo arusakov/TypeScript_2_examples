@@ -2,7 +2,7 @@
 // part 1
 //
 
-declare const obj: { prop: string | undefined }
+declare const obj: { prop: string | null }
 
 obj.prop.length // ERROR
 
