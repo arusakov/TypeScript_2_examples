@@ -8,7 +8,7 @@ namespace API {
     declare function
     call(url: string, data?: any): Promise<any>
 
-    call('/add', { name: 'name' }).then((res) => {
+    call('/add', { name: 'name' }).then(res => {
         res // any
     })
 
