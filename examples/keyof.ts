@@ -19,5 +19,5 @@ declare function
 getProperty<T, K extends keyof T>(obj: T, key: K): T[K];
 
 declare const thing: Thing
-getProperty(thing, "name")  // Ok, type string
-getProperty(thing, "count")  // Error
+getProperty(thing, "name")  // OK
+getProperty(thing, "count")  // ERROR
