@@ -5,9 +5,8 @@ declare const fetch: any
 //
 
 namespace API {
-    function call(url: string, data?: any): Promise<any> {
-        return fetch(/* ... */)
-    };
+    declare function
+    call(url: string, data?: any): Promise<any>
 
     call('/add', { name: 'name' }).then((res) => {
         res // any
