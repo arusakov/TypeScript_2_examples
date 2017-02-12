@@ -22,20 +22,20 @@ namespace API {
 // part 2
 //
 
+type User = { id: number, name: string }
 
-function call(url: '/list', data?: undefined): Promise<[{ id: number, name: string }]>
-function call(url: '/add', data: { name: string}): Promise<{ id: number }>
+function call(url: '/list', data?: undefined): Promise<User[]>
+function call(url: '/add', data: { name: string}): Promise<number>
 function call(url: string, data?: any) {
     return fetch(/* ... */)
 }
 
 call('/abb', { name: 'x' }) // ERROR
-call('/add', { name: 'x' }).then((res) => {
-    res.name    // ERROR
-    res.id      // OK
+call('/add', { name: 'x' }).then(res => {
+    res     // number
 })
 
 call('/list', {}) // ERROR
-call('/list').then((res) => {
-    res // [{ id: number, name: string }]
+call('/list').then(res => {
+    res     // User[]
 })
