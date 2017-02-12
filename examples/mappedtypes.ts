@@ -19,6 +19,7 @@ type Three = PickProps<One, 'a' | 'b'>
 //
 
 declare namespace test {
+	// lib.es6.d.ts
 	type Partial<T> = { [P in keyof T]?: T[P] }
 	type Readonly<T> = { readonly [P in keyof T]: T[P] }
 	type Pick<T, K extends keyof T> = { [P in K]: T[P] }
