@@ -10,6 +10,8 @@ if (obj.prop) {
     obj.prop.length // OK
 }
 
+obj.prop!.length // OK: ! post-fix expression
+
 //
 // part 2
 // 
