@@ -1,3 +1,3 @@
-const x = <div style={{ fontWeight: 1000 }}></div>
+const x = <div style={{ fontWeight: 1000 }} />
 
-const y = <div style={{ fontWeight: 'ligther' }}></div>
+const y = <div style={{ fontWeight: 'ligther' }} />
