@@ -20,6 +20,13 @@ namespace WhyLiteralTypes {
 // part 1
 //
 
+namespace LiteralTypes {
+    type fontWeight =
+        'initial' | 'inherit' | 'unset' |
+        'normal' | 'bold' | 'bolder' | 'lighter' |
+        100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+}
+
 const t: true = true        // t: true
 const f: false = false       // f: false
 
