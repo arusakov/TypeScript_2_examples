@@ -7,7 +7,7 @@ namespace WithoutStrictNullChecks {
   }
 
   function getTags(user: User) {
-    return user.tags.join(', ')
+    return user.tags.join(', ') // ERROR: Object is possibly 'undefined'
   }
 
   function getTagOK(user: User) {
