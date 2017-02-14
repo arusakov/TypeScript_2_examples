@@ -1,18 +1,13 @@
 
 namespace WithoutStrictNullChecks {
 
-  type Tag = {
-    id: number
-    title: string
-  }
-
   type User = {
     name: string
-    tags?: Tag[];
+    tags?: string[]
   }
 
   function getTags(user: User) {
-    return user.tags.map(t => t.title).join(', ')
+    return user.tags.join(', ')
   }
 
 }
