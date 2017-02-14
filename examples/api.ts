@@ -4,7 +4,7 @@ declare const fetch: any
 // part 1
 //
 
-namespace API {
+namespace API1 {
     declare function
     call(url: string, data?: any): Promise<any>
 
@@ -17,29 +17,32 @@ namespace API {
 }
 
 
-
 //
 // part 2
 //
 
-type User = { id: number, name: string }
+namespace API2 {
 
-function call(url: '/list', data?: undefined): Promise<User[]>
-function call(url: '/add', data: { name: string}): Promise<number>
-function call(url: string, data?: any) {
-    return fetch(/* ... */)
-}
+    type User = { id: number, name: string }
+
+    function call(url: '/list', data?: undefined): Promise<User[]>
+    function call(url: '/add', data: { name: string}): Promise<number>
+    function call(url: string, data?: any) {
+        return fetch(/* ... */)
+    }
 
 //
 // part 3
 //
 
-call('/abb', { name: 'x' }) // ERROR
-call('/add', { name: 'x' }).then(res => {
-    res     // number
-})
 
-call('/list', {}) // ERROR
-call('/list').then(res => {
-    res     // User[]
-})
+    call('/abb', { name: 'x' }) // ERROR
+    call('/add', { name: 'x' }).then(res => {
+        res     // number
+    })
+
+    call('/list', {}) // ERROR
+    call('/list').then(res => {
+        res     // User[]
+    })
+}
