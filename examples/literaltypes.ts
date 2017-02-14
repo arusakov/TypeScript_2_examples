@@ -1,4 +1,20 @@
 //
+// part 0
+//
+
+namespace WhyLiteralTypes {
+    declare const process: {
+        env: {
+            NODE_ENV: string;
+        }
+    }
+
+    if (process.env.NODE_ENV !== 'production') {
+        // bla bla bla
+    }
+}
+
+//
 // part 1
 //
 
