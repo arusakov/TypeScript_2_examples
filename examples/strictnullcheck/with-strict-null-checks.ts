@@ -14,5 +14,9 @@ namespace WithoutStrictNullChecks {
     return user.tags && user.tags.join(', ')
   }
 
+  function getTagForce(user: User) {
+    return user.tags!.join(', ')
+  }
+
 }
 
