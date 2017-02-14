@@ -12,6 +12,8 @@ namespace WhyLiteralTypes {
     if (process.env.NODE_ENV !== 'production') {
         // bla bla bla
     }
+
+    type fontWeight = number | string
 }
 
 //
