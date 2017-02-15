@@ -8,9 +8,6 @@ namespace ReduxBefore {
 
     const ACTION_TYPE_1 = 'type1'
     const ACTION_TYPE_2 = 'type2'
-    // ...
-    const ACTION_TYPE_N = 'typeN'
-
 
     interface Action1 extends Action {
         data: number
@@ -19,9 +16,7 @@ namespace ReduxBefore {
         data: string
     }
 
-    type User = { id: number, name: string }
-
-    function reduce(state: User, action: Action) {
+    function reduce(state, action: Action) {
         switch (action.type) {
             case ACTION_TYPE_1:
                 action.data
@@ -44,18 +39,12 @@ namespace ReduxAfter {
         { type: typeof ACTION_TYPE_1, data: number } |
         { type: typeof ACTION_TYPE_2, data: number }
 
-    type User = { id: number, name: string }
-
-    function reduce(state: User, action: Action) {
+    function reduce(state, action: Action) {
         switch (action.type) {
             case ACTION_TYPE_1:
-                return Object.assign({}, state, {
-                    id: action.data // number
-                })
+                action.data // number
             case ACTION_TYPE_2:
-                return Object.assign({}, state, {
-                    name: action.data // string
-                })
+                action.data // string
         }
     }
 }
