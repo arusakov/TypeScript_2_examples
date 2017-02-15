@@ -4,7 +4,7 @@
 
 import { Action } from 'redux'
 
-namespace ReduxAfter {
+namespace ReduxBefore {
 
     const ACTION_TYPE_1 = 'type1'
     const ACTION_TYPE_2 = 'type2'
@@ -24,13 +24,9 @@ namespace ReduxAfter {
     function reduce(state: User, action: Action) {
         switch (action.type) {
             case ACTION_TYPE_1:
-                return Object.assign({}, state, {
-                    id: (action as Action1).data
-                })
+                action.data
             case ACTION_TYPE_2:
-                return Object.assign({}, state, {
-                    name: (action as Action1).data // Gotcha!
-                })
+                (action as Action2).data
         }
     }
 }
