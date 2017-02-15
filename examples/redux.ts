@@ -4,10 +4,13 @@
 
 import { Action } from 'redux'
 
-namespace ReduxBefore {
+namespace ReduxAfter {
 
     const ACTION_TYPE_1 = 'type1'
     const ACTION_TYPE_2 = 'type2'
+    // ...
+    const ACTION_TYPE_N = 'typeN'
+
 
     interface Action1 extends Action {
         data: number
@@ -21,11 +24,11 @@ namespace ReduxBefore {
     function reduce(state: User, action: Action) {
         switch (action.type) {
             case ACTION_TYPE_1:
-                return Object.assign(state, {
+                return Object.assign({}, state, {
                     id: (action as Action1).data
                 })
             case ACTION_TYPE_2:
-                return Object.assign(state, {
+                return Object.assign({}, state, {
                     name: (action as Action1).data // Gotcha!
                 })
         }
@@ -36,7 +39,7 @@ namespace ReduxBefore {
 // part 2
 //
 
-namespace ReduxBefore {
+namespace ReduxAfter {
 
     const ACTION_TYPE_1 = 'type1'
     const ACTION_TYPE_2 = 'type2'
@@ -50,11 +53,11 @@ namespace ReduxBefore {
     function reduce(state: User, action: Action) {
         switch (action.type) {
             case ACTION_TYPE_1:
-                return Object.assign(state, {
+                return Object.assign({}, state, {
                     id: action.data // number
                 })
             case ACTION_TYPE_2:
-                return Object.assign(state, {
+                return Object.assign({}, state, {
                     name: action.data // string
                 })
         }
