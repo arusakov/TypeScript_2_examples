@@ -1,7 +1,7 @@
 
 import * as React from 'react'
 
-namespace ReactBefore {
+namespace React {
 
   type CmpState = { x: number, y: string }
 
