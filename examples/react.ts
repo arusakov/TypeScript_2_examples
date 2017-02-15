@@ -1,7 +1,6 @@
-
 import * as React from 'react'
 
-namespace React {
+namespace ReactExample {
 
   type CmpState = { x: number, y: string }
 
