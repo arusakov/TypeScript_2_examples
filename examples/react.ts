@@ -3,18 +3,16 @@ import * as React from 'react'
 
 namespace ReactBefore {
 
-  type Props = { /* */ y: string }
-  type State = { /* */ x: number }
+  type CmpState = { x: number, y: string }
 
-  class Cmp extends React.Component<Props, State> {
+  class Cmp extends React.Component<void, CmpState> {
 
     onChange = e => {
       this.state.x = 1
-      this.props.y = ''
 
       this.setState({
-        name: e.target.value
-      })
+        y: e.target.value
+      } as CmpState)
     }
   }
 }
