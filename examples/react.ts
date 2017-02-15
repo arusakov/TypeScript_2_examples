@@ -3,10 +3,10 @@ import * as React from 'react'
 
 namespace ReactBefore {
 
-  type CmpProps = { /* */ y: string }
-  type CmpState = { /* */ x: number }
+  type Props = { /* */ y: string }
+  type State = { /* */ x: number }
 
-  class Cmp extends React.Component<CmpProps, CmpState> {
+  class Cmp extends React.Component<Props, State> {
 
     onChange = e => {
       this.state.x = 1
