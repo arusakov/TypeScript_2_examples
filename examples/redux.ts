@@ -19,7 +19,7 @@ namespace ReduxBefore {
     function reduce(state, action: Action) {
         switch (action.type) {
             case ACTION_TYPE_1:
-                action.data
+                action.data // ERROR: Property 'data' does not exist on type 'Action'
             case ACTION_TYPE_2:
                 (action as Action2).data
         }
