@@ -20,8 +20,10 @@ namespace ReduxBefore {
         switch (action.type) {
             case ACTION_TYPE_1:
                 action.data // ERROR: Property 'data' does not exist on type 'Action'
+                break
             case ACTION_TYPE_2:
                 (action as Action2).data
+                break
         }
     }
 }
@@ -35,16 +37,22 @@ namespace ReduxAfter {
     const ACTION_TYPE_1 = 'type1'
     const ACTION_TYPE_2 = 'type2'
 
+    type ActionLight =
+        { type: 'type1', id: number } |
+        { type: 'type2', name: string }
+
     type Action =
-        { type: typeof ACTION_TYPE_1, data: number } |
-        { type: typeof ACTION_TYPE_2, data: number }
+        { type: typeof ACTION_TYPE_1, id: number } |
+        { type: typeof ACTION_TYPE_2, name: string }
 
     function reduce(state, action: Action) {
         switch (action.type) {
             case ACTION_TYPE_1:
-                action.data // number
+                action.id // number
+                break
             case ACTION_TYPE_2:
-                action.data // string
+                action.name // string
+                break
         }
     }
 }
